@@ -4,4 +4,8 @@ async function getBlogs() {
   return await blogDao.getBlogs();
 }
 
-module.exports = { getBlogs };
+async function postBlog(name, subject, content) {
+  return await blogDao.postBlog(name, subject, content);
+}
+
+module.exports = { getBlogs, postBlog };

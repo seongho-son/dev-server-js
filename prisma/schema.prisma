@@ -31,21 +31,12 @@ model Stores {
   @@map("stores")
 }
 
-model BlogImage {
-  id      Int    @id @default(autoincrement())
-  url     String
-  Blogs   Blog?  @relation(fields: [blogsId], references: [id])
-  blogsId Int?
-
-  @@map("blog_image")
-}
 
 model Blog {
-  id         Int            @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   name       String
   subject    String
-  content       String
-  images     BlogImage[]
+  content    String   @db.Text
   createdAt  String
   updatedAt  String?
   deletedAt  String?

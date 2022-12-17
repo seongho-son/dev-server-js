@@ -4,8 +4,10 @@ const blogController = require("../controllers/blogController");
 
 // GET
 router.get("/", blogController.getBlogs);
+router.get("/:id", blogController.getBlog);
 
 // POST
+router.post("/", blogController.postBlog);
 
 // PUT
 
