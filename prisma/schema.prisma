@@ -34,9 +34,7 @@ model Stores {
 
 model Blog {
   id         Int      @id @default(autoincrement())
-  name       String
-  subject    String
-  content    String   @db.Text
+  text    String   @db.Text
   createdAt  String
   updatedAt  String?
   deletedAt  String?
