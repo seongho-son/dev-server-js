@@ -8,8 +8,8 @@ async function getBlog(id) {
   return await blogDao.getBlog(id);
 }
 
-async function postBlog(name, subject, content) {
-  return await blogDao.postBlog(name, subject, content);
+async function postBlog(text) {
+  return await blogDao.postBlog(text);
 }
 
 module.exports = { getBlogs, getBlog, postBlog };

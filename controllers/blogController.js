@@ -24,11 +24,10 @@ async function getBlog(req, res) {
 
 async function postBlog(req, res) {
   try {
-    const { name, subject, content } = req.body;
-    if (!name || !subject || !content)
-      return await errorGenerator({ statusCode: 400, message: "KEY_ERROR" });
+    const { text } = req.body;
+    if (!text) return await errorGenerator({ statusCode: 400, message: "KEY_ERROR" });
 
-    await blogService.postBlog(name, subject, content);
+    await blogService.postBlog(text);
 
     res.status(200);
   } catch (err) {

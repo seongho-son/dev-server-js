@@ -11,9 +11,9 @@ async function getBlog(id) {
   return await prisma.blog.findUnique({ where: { id } });
 }
 
-async function postBlog(name, subject, content) {
+async function postBlog(text) {
   return await prisma.blog.create({
-    data: { name, subject, content, createdAt: moment().format("YYYY-MM-DD HH:mm") },
+    data: { text, createdAt: moment().format("YYYY-MM-DD HH:mm") },
   });
 }
 
